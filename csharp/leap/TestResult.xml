@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Dev\exercism.io\exercises\csharp\leap\leap.nunit" total="8" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-05-20" time="23:32:20">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="KENTPC" user="kent_000" user-domain="KENTPC" />
+  <culture-info current-culture="en-NZ" current-uiculture="en-US" />
+  <test-suite type="Project" name="C:\Dev\exercism.io\exercises\csharp\leap\leap.nunit" executed="True" result="Success" success="True" time="0.073" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="C:\Dev\exercism.io\exercises\csharp\leap\..\bin\Debug\Exercism.csharp.dll" executed="True" result="Success" success="True" time="0.061" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="ExampleTests" executed="True" result="Success" success="True" time="0.047" asserts="0">
+            <results>
+              <test-suite type="ParameterizedTest" name="Can_add" executed="True" result="Success" success="True" time="0.041" asserts="0">
+                <results>
+                  <test-case name="ExampleTests.Can_add(12,24,36)" executed="True" result="Success" success="True" time="0.028" asserts="1" />
+                  <test-case name="ExampleTests.Can_add(100,1,101)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="ExampleTests.Can_add(2,-2,0)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="ExampleTests.Can_add(2,2,4)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="LeapTest" executed="True" result="Success" success="True" time="0.010" asserts="0">
+            <results>
+              <test-case name="LeapTest.Invalid_leap_year" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+              <test-case name="LeapTest.Turn_of_the_20th_century_is_not_a_leap_year" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="LeapTest.Turn_of_the_25th_century_is_a_leap_year" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="LeapTest.Valid_leap_year" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
