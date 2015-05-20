@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bob\BobTest.cs" />
     <Compile Include="example\Example.cs" />
     <Compile Include="example\ExampleTests.cs" />
     <Compile Include="leap\Leap.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bob\README.md" />
     <None Include="leap\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
