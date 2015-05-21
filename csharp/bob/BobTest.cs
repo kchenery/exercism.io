@@ -4,6 +4,14 @@ using Exercism.Bob;
 [TestFixture]
 public class BobTest
 {
+    private Bob Bob;
+
+    [SetUp]
+    public void SetupBob()
+    {
+        Bob = new Bob();
+    }
+
     [Test]
     public void Stating_something ()
     {

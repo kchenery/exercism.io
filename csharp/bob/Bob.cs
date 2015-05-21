@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
 namespace Exercism.Bob
 {
-    public static class Bob
+    public class Bob
     {
-        static Dictionary<MessageType, string> bobsReponses = new Dictionary<MessageType, string>();
+        private Dictionary<MessageType, string> bobsReponses = new Dictionary<MessageType, string>();
 
-        public static string Hey(string message)
+        public Bob()
         {
             loadResponses();
+        }
 
+        public string Hey(string message)
+        {
             string response = null;
 
             bobsReponses.TryGetValue(MessageParser.Parse(message), out response);
@@ -22,15 +22,12 @@ namespace Exercism.Bob
             return (response == null) ? bobsReponses[MessageType.Generic] : response;
         }
 
-        private static void loadResponses()
+        private void loadResponses()
         {
-            if (bobsReponses.Count < 4)
-            {
-                bobsReponses.Add(MessageType.Generic, "Whatever.");
-                bobsReponses.Add(MessageType.Question, "Sure.");
-                bobsReponses.Add(MessageType.Shouting, "Whoa, chill out!");
-                bobsReponses.Add(MessageType.Silence, "Fine. Be that way!");
-            }
+            bobsReponses.Add(MessageType.Generic, "Whatever.");
+            bobsReponses.Add(MessageType.Question, "Sure.");
+            bobsReponses.Add(MessageType.Shouting, "Whoa, chill out!");
+            bobsReponses.Add(MessageType.Silence, "Fine. Be that way!");
         }
     }
 
@@ -70,7 +67,6 @@ namespace Exercism.Bob
         {
             return message.All(Char.IsWhiteSpace);
         }
-
     }
 
     public enum MessageType
