@@ -40,55 +40,36 @@ namespace Exercism.Bob
         {
             MessageType response = MessageType.Generic;
 
-            if (TestSilence(message))
+            if (IsSilence(message))
             {
                 response = MessageType.Silence;
             }
-            else if (TestQuestion(StripDigits(message)) && (StripDigits(message).Length == 1))
+            else if (IsQuestion(message))
             {
                 response = MessageType.Question;
             }
-            else if (TestShouting(StripDigits(message)))
+            else if (IsShouting(message))
             {
                 response = MessageType.Shouting;
-            }
-            else if (TestQuestion(StripDigits(message)))
-            {
-                response = MessageType.Question;
             }
 
             return response;
         }
 
-        private static bool TestQuestion(string message)
+        private static bool IsQuestion(string message)
         {
-            bool isQuestion = false;
-
-            if (message.Length > 0)
-            {
-                char[] messageArray = message.TrimEnd().ToCharArray();
-                Array.Reverse(messageArray);
-                isQuestion = messageArray[0] == '?';
-            }
-
-            return isQuestion;
+            return message.Trim().EndsWith("?") && (message.Any(Char.IsLower) || message.Any(Char.IsDigit));
         }
 
-        private static bool TestShouting(string message)
+        private static bool IsShouting(string message)
         {
-            return message.Equals(message.ToUpper()) && message.Length > 0;
+            return message.Equals(message.ToUpper()) && message.Any(Char.IsLetter);
         }
 
-        private static bool TestSilence(string message)
+        private static bool IsSilence(string message)
         {
-            return message.Trim().Length == 0;
+            return message.All(Char.IsWhiteSpace);
         }
-
-        private static string StripDigits(string message)
-        {
-            return Regex.Replace(message, @"[\d, ]", "");
-        }
-
 
     }
 
