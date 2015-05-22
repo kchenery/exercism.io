@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="hamming\Hamming.cs" />
+    <Compile Include="hamming\HammingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="hamming\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
