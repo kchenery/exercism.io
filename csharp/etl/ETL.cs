@@ -12,11 +12,11 @@ namespace Exercism.ETL
         {
             Dictionary<string, int> scrabbleOutput = new Dictionary<string,int>();
 
-            foreach(var scoreTupple in scrabbleInput)
+            foreach(var scoreTuple in scrabbleInput)
             {
-                var score = scoreTupple.Key;
+                var score = scoreTuple.Key;
 
-                foreach(var letter in scoreTupple.Value)
+                foreach(var letter in scoreTuple.Value)
                 {
                     scrabbleOutput.Add(letter.ToLower(), score);
                 }
