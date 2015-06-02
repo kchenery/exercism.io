@@ -1,6 +1,6 @@
-using System.Collections.Generic;
-using NUnit.Framework;
 using Exercism.ETL;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 [TestFixture]
 public class ETLTest
