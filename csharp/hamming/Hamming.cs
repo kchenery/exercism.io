@@ -12,14 +12,10 @@ namespace Exercism.hamming
                 throw new ArgumentException("Sequences must be of the same length to compute Hamming");
             }
 
-            int result = 0;
-
-            for (int i = 0; i < firstSequence.Length; i++)
-            {
-                result += firstSequence[i] != secondSequence[i] ? 1 : 0;
-            }
-
-            return result;
+            // Count the non matching characters by generating a range of values for the length of the string
+            // and using Linq to do the count.
+            return Enumerable.Range(0, firstSequence.Length)
+                .Count(i => firstSequence[i] != secondSequence[i]);
         }
     }
 }
