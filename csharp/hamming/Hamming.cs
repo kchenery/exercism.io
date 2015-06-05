@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercism.hamming
 {
@@ -17,12 +14,9 @@ namespace Exercism.hamming
 
             int result = 0;
 
-            var first = firstSequence.ToCharArray();
-            var second = secondSequence.ToCharArray();
-
-            for (int i = 0; i < first.Length; i++)
+            for (int i = 0; i < firstSequence.Length; i++)
             {
-                result += first[i] != second[i] ? 1 : 0;
+                result += firstSequence[i] != secondSequence[i] ? 1 : 0;
             }
 
             return result;
