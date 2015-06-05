@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercism.anagram
 {
@@ -19,7 +17,7 @@ namespace Exercism.anagram
         {
             List<string> results = new List<string>();
 
-            foreach(var word in wordList.ToList())
+            foreach (var word in wordList.ToList())
             {
                 if (IsAnagramPair(word, anagram))
                 {

@@ -1,5 +1,5 @@
-using NUnit.Framework;
 using Exercism.anagram;
+using NUnit.Framework;
 
 [TestFixture]
 public class AnagramTest
@@ -84,5 +84,4 @@ public class AnagramTest
         var results = new[] { "Carthorse" };
         Assert.That(detector.Match(words), Is.EquivalentTo(results));
     }
-
 }
