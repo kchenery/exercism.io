@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Exercism.RobotName;
 
 [TestFixture]
 public class RobotNameTest
@@ -17,14 +18,12 @@ public class RobotNameTest
         StringAssert.IsMatch(@"[A-Z]{2}\d{3}", robot.Name);
     }
 
-    [Ignore]
     [Test]
     public void Name_is_the_same_each_time()
     {
         Assert.That(robot.Name, Is.EqualTo(robot.Name));
     }
 
-    [Ignore]
     [Test]
     public void Different_robots_have_different_names()
     {
@@ -32,7 +31,6 @@ public class RobotNameTest
         Assert.That(robot.Name, Is.Not.EqualTo(robot2.Name));
     }
 
-    [Ignore]
     [Test]
     public void Can_reset_the_name()
     {
