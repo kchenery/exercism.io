@@ -30,12 +30,14 @@ namespace Exercism.NucleotideCount
         /// <exception cref="InvalidNucleotideException"></exception>
         public int Count(char nucleotide)
         {
-            if (!IsValidNucleotide(nucleotide))
+            try
+            {
+                return NucleotideCounts[nucleotide];
+            }
+            catch
             {
                 throw new InvalidNucleotideException();
             }
-
-            return NucleotideCounts.Where(c => c.Key == nucleotide).First().Value;
         }
 
         /* Helper Methods */
@@ -49,13 +51,16 @@ namespace Exercism.NucleotideCount
         {
             Dictionary<char, int> nucleotideCounts = EmptyNucleotideCount();
 
-            var interimCounts = dna.GroupBy(c => c)
-                .OrderBy(g => g.Key)
-                .ToDictionary(res => res.Key, res => res.Count());
-
-            foreach (var nucleotideCount in interimCounts)
+            foreach(var nucleotide in dna)
             {
-                nucleotideCounts[nucleotideCount.Key] = nucleotideCount.Value;
+                try
+                {
+                    nucleotideCounts[nucleotide]++;
+                }
+                catch
+                {
+                    throw new InvalidNucleotideException();
+                }
             }
 
             return nucleotideCounts;
@@ -75,17 +80,6 @@ namespace Exercism.NucleotideCount
             }
 
             return emptyNucleotideCounts;
-        }
-
-        /// <summary>
-        /// Determines whether the supplied nucleotide is a valid one as listed in
-        /// _validNucleotides
-        /// </summary>
-        /// <param name="nucleotide">The nucleotide to test.</param>
-        /// <returns></returns>
-        private bool IsValidNucleotide(char nucleotide)
-        {
-            return _validNucleotides.Contains(nucleotide);
         }
     }
 
