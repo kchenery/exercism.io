@@ -8,9 +8,9 @@ namespace Exercism
 {
     public class SumOfMultiples
     {
-        private List<int> _multiples;
+        private IEnumerable<int> _multiples;
 
-        public SumOfMultiples(List<int> multiples)
+        public SumOfMultiples(IEnumerable<int> multiples)
         {
             _multiples = multiples;
         }
