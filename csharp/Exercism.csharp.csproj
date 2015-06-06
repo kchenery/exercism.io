@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="nucleotide-count\NucleotideCount.cs" />
+    <Compile Include="nucleotide-count\NucleotideCountTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="nucleotide-count\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

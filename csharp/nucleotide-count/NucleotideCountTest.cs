@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using Exercism.NucleotideCount;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 [TestFixture]
 public class NucleoTideCountTest
@@ -12,7 +13,6 @@ public class NucleoTideCountTest
         Assert.That(dna.NucleotideCounts, Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Has_no_adenosine()
     {
@@ -20,7 +20,6 @@ public class NucleoTideCountTest
         Assert.That(dna.Count('A'), Is.EqualTo(0));
     }
 
-    [Ignore]
     [Test]
     public void Repetitive_cytidine_gets_counts()
     {
@@ -28,7 +27,6 @@ public class NucleoTideCountTest
         Assert.That(dna.Count('C'), Is.EqualTo(5));
     }
 
-    [Ignore]
     [Test]
     public void Repetitive_sequence_has_only_guanosine()
     {
@@ -37,7 +35,6 @@ public class NucleoTideCountTest
         Assert.That(dna.NucleotideCounts, Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Counts_only_thymidine()
     {
@@ -45,7 +42,6 @@ public class NucleoTideCountTest
         Assert.That(dna.Count('T'), Is.EqualTo(1));
     }
 
-    [Ignore]
     [Test]
     public void Counts_a_nucleotide_only_once()
     {
@@ -54,7 +50,6 @@ public class NucleoTideCountTest
         Assert.That(dna.Count('T'), Is.EqualTo(2));
     }
 
-    [Ignore]
     [Test]
     public void Validates_nucleotides()
     {
@@ -62,7 +57,6 @@ public class NucleoTideCountTest
         Assert.Throws<InvalidNucleotideException>(() => dna.Count('X'));
     }
 
-    [Ignore]
     [Test]
     public void Counts_all_nucleotides()
     {
