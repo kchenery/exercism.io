@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using Exercism.Meetup;
 
 [TestFixture]
 public class MeetupTest
@@ -17,7 +18,6 @@ public class MeetupTest
         return day.ToString("yyyy-M-d");
     }
 
-    [Ignore]
     [TestCase(3, DayOfWeek.Monday, Result = "2013-3-4")]
     [TestCase(5, DayOfWeek.Tuesday, Result = "2013-5-7")]
     [TestCase(7, DayOfWeek.Wednesday, Result = "2013-7-3")]
@@ -31,7 +31,6 @@ public class MeetupTest
         return day.ToString("yyyy-M-d");
     }
 
-    [Ignore]
     [TestCase(3, DayOfWeek.Monday, Result = "2013-3-11")]
     [TestCase(5, DayOfWeek.Tuesday, Result = "2013-5-14")]
     [TestCase(7, DayOfWeek.Wednesday, Result = "2013-7-10")]
@@ -45,7 +44,6 @@ public class MeetupTest
         return day.ToString("yyyy-M-d");
     }
 
-    [Ignore]
     [TestCase(3, DayOfWeek.Monday, Result = "2013-3-18")]
     [TestCase(5, DayOfWeek.Tuesday, Result = "2013-5-21")]
     [TestCase(7, DayOfWeek.Wednesday, Result = "2013-7-17")]
@@ -59,7 +57,6 @@ public class MeetupTest
         return day.ToString("yyyy-M-d");
     }
 
-    [Ignore]
     [TestCase(3, DayOfWeek.Monday, Result = "2013-3-25")]
     [TestCase(5, DayOfWeek.Tuesday, Result = "2013-5-28")]
     [TestCase(7, DayOfWeek.Wednesday, Result = "2013-7-24")]
@@ -73,7 +70,6 @@ public class MeetupTest
         return day.ToString("yyyy-M-d");
     }
 
-    [Ignore]
     [TestCase(3, DayOfWeek.Monday, Result = "2013-3-25")]
     [TestCase(5, DayOfWeek.Tuesday, Result = "2013-5-28")]
     [TestCase(7, DayOfWeek.Wednesday, Result = "2013-7-31")]
