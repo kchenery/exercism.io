@@ -43,12 +43,7 @@ namespace Exercism.Meetup
 
         public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule)
         {
-            return GetNthDayFromDOM(dayOfWeek, schedule.GetValue());
-        }
-
-        private DateTime GetNthDayFromDOM(DayOfWeek dayOfWeek, int startAt)
-        {
-            startAt = (startAt > 0 ? startAt : DateTime.DaysInMonth(year, month) - 6);
+            int startAt = (schedule.GetValue() > 0 ? schedule.GetValue() : DateTime.DaysInMonth(year, month) - 6);
 
             DateTime date = new DateTime(year, month, startAt);
 
