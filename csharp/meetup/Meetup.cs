@@ -8,12 +8,13 @@ namespace Exercism.Meetup
 {
     enum Schedule
     {
-        First,
-        Second,
-        Third,
-        Fourth,
-        Last,
-        Teenth
+        // Set the value to the first day of the month it could possibly be
+        First = 1,
+        Second = 8,
+        Third = 15,
+        Fourth = 22,
+        Teenth = 13,
+        Last = -1       // -1 = last and we'll start at the end of the month
     }
 
     class Meetup
@@ -29,57 +30,22 @@ namespace Exercism.Meetup
 
         public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule)
         {
-            DateTime day;
+            return GetNthDayFromDOM(dayOfWeek, (int)schedule);
+        }
 
-            switch(schedule){
-                case Schedule.Teenth:
-                    day = GetTeenth(dayOfWeek, month, year);
-                    break;
+        private DateTime GetNthDayFromDOM(DayOfWeek dayOfWeek, int startAt)
+        {
+            DateTime date = new DateTime(year, month, 1);
+            int endAt = startAt + 6;
 
-                case Schedule.First:
-                    day = GetFirst(dayOfWeek, month, year);
-                    break;
-
-                case Schedule.Second:
-                    day = GetSecond(dayOfWeek, month, year);
-                    break;
-
-                case Schedule.Third:
-                    day = GetThird(dayOfWeek, month, year);
-                    break;
-
-                case Schedule.Fourth:
-                    day = GetFourth(dayOfWeek, month, year);
-                    break;
-
-                case Schedule.Last:
-                    day = GetLast(dayOfWeek, month, year);
-                    break;
-
-                default:
-                    day = DateTime.Now;
-                    break;
+            if (startAt < 0)
+            {
+                // Finding the last day in the month, so reverse the approach
+                endAt = date.AddMonths(1).AddDays(-1).Day;  // Find the end of the month
+                startAt = endAt - 6;
             }
 
-            return day;
-        }
-
-        private static DateTime GetTeenth(DayOfWeek dayOfWeek, int month, int year)
-        {
-            DateTime day = GetFirst(dayOfWeek, month, year);
-
-            if (day.Day > 5)
-                return day.AddDays(7);
-            else
-                return day.AddDays(14);
-
-        }
-
-        private static DateTime GetFirst(DayOfWeek dayOfWeek, int month, int year)
-        {
-            DateTime date = DateTime.Now;
-
-            for (int day = 1; day < 8; day++)
+            for (int day = startAt; day <= endAt; day++)
             {
                 date = new DateTime(year, month, day);
 
@@ -92,37 +58,5 @@ namespace Exercism.Meetup
             return date;
         }
 
-        private static DateTime GetLast(DayOfWeek dayOfWeek, int month, int year)
-        {
-            DateTime date = DateTime.Now;
-            int eom = new DateTime(year, month, 1).AddMonths(1).AddDays(-1).Day;
-
-            for (int day = eom; day > (eom - 7); day--)
-            {
-                date = new DateTime(year, month, day);
-
-                if (date.DayOfWeek == dayOfWeek)
-                {
-                    return date;
-                }
-            }
-
-            return date;
-        }
-
-        private static DateTime GetSecond(DayOfWeek dayOfWeek, int month, int year)
-        {
-            return GetFirst(dayOfWeek, month, year).AddDays(7);
-        }
-
-        private static DateTime GetThird(DayOfWeek dayOfWeek, int month, int year)
-        {
-            return GetFirst(dayOfWeek, month, year).AddDays(14);
-        }
-
-        private static DateTime GetFourth(DayOfWeek dayOfWeek, int month, int year)
-        {
-            return GetFirst(dayOfWeek, month, year).AddDays(21);
-        }
     }
 }
