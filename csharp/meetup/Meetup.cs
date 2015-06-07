@@ -17,11 +17,16 @@ namespace Exercism.Meetup
         Last = -1       // -1 = last and we'll start at the end of the month
     }
 
-    public static class ScheduleExtensions
+    public static class Extensions
     {
         public static int GetValue(this Schedule schedule)
         {
             return (int)schedule;
+        }
+
+        public static int GetValue(this DayOfWeek dayOfWeek)
+        {
+            return (int)dayOfWeek;
         }
     }
 
@@ -43,27 +48,13 @@ namespace Exercism.Meetup
 
         private DateTime GetNthDayFromDOM(DayOfWeek dayOfWeek, int startAt)
         {
-            DateTime date = new DateTime(year, month, 1);
-            int endAt = startAt + 6;
+            startAt = (startAt > 0 ? startAt : DateTime.DaysInMonth(year, month) - 6);
 
-            if (startAt < 0)
-            {
-                // Finding the last day in the month, so reverse the approach
-                endAt = DateTime.DaysInMonth(year, month);  // Find the end of the month
-                startAt = endAt - 6;
-            }
+            DateTime date = new DateTime(year, month, startAt);
 
-            for (int day = startAt; day <= endAt; day++)
-            {
-                date = new DateTime(year, month, day);
+            int delta = dayOfWeek.GetValue() - date.DayOfWeek.GetValue();
 
-                if (date.DayOfWeek == dayOfWeek)
-                {
-                    return date;
-                }
-            }
-
-            return date;
+            return date.AddDays(delta < 0 ? delta + 7 : delta);
         }
     }
 }
