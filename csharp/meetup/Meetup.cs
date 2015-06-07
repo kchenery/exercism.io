@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercism.Meetup
 {
-    enum Schedule
+    public enum Schedule
     {
         // Set the value to the first day of the month it could possibly be
         First = 1,
@@ -15,6 +15,14 @@ namespace Exercism.Meetup
         Fourth = 22,
         Teenth = 13,
         Last = -1       // -1 = last and we'll start at the end of the month
+    }
+
+    public static class ScheduleExtensions
+    {
+        public static int GetValue(this Schedule schedule)
+        {
+            return (int)schedule;
+        }
     }
 
     class Meetup
@@ -30,7 +38,7 @@ namespace Exercism.Meetup
 
         public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule)
         {
-            return GetNthDayFromDOM(dayOfWeek, (int)schedule);
+            return GetNthDayFromDOM(dayOfWeek, schedule.GetValue());
         }
 
         private DateTime GetNthDayFromDOM(DayOfWeek dayOfWeek, int startAt)
@@ -57,6 +65,5 @@ namespace Exercism.Meetup
 
             return date;
         }
-
     }
 }
