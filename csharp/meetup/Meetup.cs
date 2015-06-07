@@ -49,7 +49,7 @@ namespace Exercism.Meetup
             if (startAt < 0)
             {
                 // Finding the last day in the month, so reverse the approach
-                endAt = date.AddMonths(1).AddDays(-1).Day;  // Find the end of the month
+                endAt = DateTime.DaysInMonth(year, month);  // Find the end of the month
                 startAt = endAt - 6;
             }
 
