@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="gigasecond\Gigasecond.cs" />
+    <Compile Include="gigasecond\GigasecondTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="gigasecond\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
