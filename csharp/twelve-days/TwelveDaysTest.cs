@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Exercism.TwelveDays;
 
 [TestFixture]
 public class TwelveDaysTest
@@ -19,7 +20,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(1), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_2()
     {
@@ -28,7 +28,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(2), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_3()
     {
@@ -37,7 +36,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(3), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_4()
     {
@@ -46,7 +44,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(4), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_5()
     {
@@ -55,7 +52,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(5), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_6()
     {
@@ -64,7 +60,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(6), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_7()
     {
@@ -73,7 +68,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(7), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_8()
     {
@@ -82,7 +76,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(8), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_9()
     {
@@ -91,7 +84,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(9), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_10()
     {
@@ -100,7 +92,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(10), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_11()
     {
@@ -109,7 +100,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(11), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_verse_12()
     {
@@ -118,7 +108,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verse(12), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_multiple_verses()
     {
@@ -129,7 +118,6 @@ public class TwelveDaysTest
         Assert.That(twelveDaysSong.Verses(1, 3), Is.EqualTo(expected));
     }
 
-    [Ignore]
     [Test]
     public void Return_entire_song()
     {
