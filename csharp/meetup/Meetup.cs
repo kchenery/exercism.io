@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercism.Meetup
 {
@@ -10,6 +6,7 @@ namespace Exercism.Meetup
     {
         // Set the value to the first day of the month it could possibly be
         First = 1,
+
         Second = 8,
         Third = 15,
         Fourth = 22,
@@ -30,7 +27,7 @@ namespace Exercism.Meetup
         }
     }
 
-    class Meetup
+    internal class Meetup
     {
         private int month;
         private int year;
