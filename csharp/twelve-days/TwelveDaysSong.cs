@@ -8,8 +8,8 @@ namespace Exercism.TwelveDays
 {
     class TwelveDaysSong
     {
-        Dictionary<int, string> TwelveDays = new Dictionary<int, string>();
-        Dictionary<int, string> DayName = new Dictionary<int, string>();
+        private Dictionary<int, string> TwelveDays = new Dictionary<int, string>();
+        private Dictionary<int, string> DayName = new Dictionary<int, string>();
         private readonly string Opening = "On the {0} day of Christmas my true love gave to me";
 
         public TwelveDaysSong()
