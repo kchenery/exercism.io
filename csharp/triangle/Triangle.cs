@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Exercism.Triangle
 {
@@ -14,27 +15,26 @@ namespace Exercism.Triangle
         public static TriangleKind Kind(decimal a, decimal b, decimal c)
         {
             // Test its a triangle
-            if ((a + b) > c && (b + c) > a && (c + a) > b)
+            if (IsTriangle(a, b, c))
             {
-                // If all sides are equal its an equilateral triangle
-                if (a == b && b == c)
+                decimal[] sides = new decimal[] {a, b, c};
+
+                switch (sides.Distinct().Count())
                 {
-                    return TriangleKind.Equilateral;
-                }
-                // If two sides are equal its an equilateral triangle
-                else if (a == b || b == c || a == c)
-                {
-                    return TriangleKind.Isosceles;
-                }
-                // None of the above so it must be a scalene triangle
-                else
-                {
-                    return TriangleKind.Scalene;
+                    case 1: return TriangleKind.Equilateral;
+                    case 2: return TriangleKind.Isosceles;
+                    case 3: return TriangleKind.Scalene;
+                    default: throw new TriangleException();
                 }
             }
 
             // Wasn't a triangle
             throw new TriangleException();
+        }
+
+        private static bool IsTriangle(decimal a, decimal b, decimal c)
+        {
+            return (a + b > c) && (b + c > a) && (c + a > b);
         }
     }
 
