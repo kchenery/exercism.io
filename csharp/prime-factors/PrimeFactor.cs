@@ -5,73 +5,34 @@ namespace Exercism.PrimeFactors
 {
     public static class PrimeFactors
     {
-        private static List<long> FoundPrimes = new List<long> { 2, 3 };
-
         public static long[] For(long valueToFactor)
         {
-            List<long> primeFactors = new List<long>();
+            var primeFactors = new List<long>();
 
-            /* Loop over the existing found primes to see if they work */
-            for (int x = 0; x < FoundPrimes.Count; x++)
+            var factor = 2;
+
+            while(valueToFactor > 1)
             {
-                long prime = FoundPrimes[x];
-
-                while (valueToFactor % prime == 0)
+                if(valueToFactor % factor > 0)
                 {
-                    primeFactors.Add(prime);
-                    valueToFactor /= prime;
-                }
-            }
+                    factor = factor < 3 ? factor = 3 : factor;
 
-            for (long i = FoundPrimes[FoundPrimes.Count - 1]; i <= valueToFactor; i++)
-            {
-                if (IsPrime(i))
-                {
-                    while (valueToFactor % i == 0)
+                    do
                     {
-                        primeFactors.Add(i);
-                        valueToFactor /= i;
-                    }
+                        if (valueToFactor % factor == 0)
+                        {
+                            break;
+                        }
+
+                        factor += 2;
+                    } while (factor < valueToFactor);
                 }
+
+                valueToFactor /= factor;
+                primeFactors.Add(factor);
             }
 
             return primeFactors.ToArray();
-        }
-
-        private static bool IsPrime(long prime)
-        {
-            if (prime == 1)
-            {
-                return false;
-            }
-
-            if(FoundPrimes.Contains(prime))
-            {
-                return true;
-            }
-
-            if (prime % 2 == 0)
-            {
-                return false;
-            }
-
-
-
-            long factor = prime / 2;
-            long startAt = FoundPrimes[FoundPrimes.Count - 1];
- 
-
-            
-            for (long i = 3; i <= factor; i+=2)
-            {
-                if ((prime % i) == 0)
-                    return false;
-            }
-
-            // Found a new prime!
-            FoundPrimes.Add(prime);
-
-            return true;
         }
 
     }
