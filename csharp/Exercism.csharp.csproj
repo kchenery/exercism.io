@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="binary\Binary.cs" />
+    <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="binary\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
