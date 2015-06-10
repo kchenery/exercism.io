@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="roman-numerals\RomanNumerals.cs" />
     <Compile Include="roman-numerals\RomanNumeralsTest.cs" />
   </ItemGroup>
   <ItemGroup>
