@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Exercism.Raindrops;
 
 [TestFixture]
 public class RaindropsTest
@@ -11,7 +12,6 @@ public class RaindropsTest
         return Raindrops.Convert(number);
     }
 
-    [Ignore]
     [TestCase(3)]
     [TestCase(6)]
     [TestCase(9)]
@@ -20,7 +20,6 @@ public class RaindropsTest
         Assert.That(Raindrops.Convert(number), Is.EqualTo("Pling"));
     }
 
-    [Ignore]
     [TestCase(5)]
     [TestCase(10)]
     [TestCase(25)]
@@ -29,7 +28,6 @@ public class RaindropsTest
         Assert.That(Raindrops.Convert(number), Is.EqualTo("Plang"));
     }
 
-    [Ignore]
     [TestCase(7)]
     [TestCase(14)]
     [TestCase(49)]
@@ -38,7 +36,6 @@ public class RaindropsTest
         Assert.That(Raindrops.Convert(number), Is.EqualTo("Plong"));
     }
 
-    [Ignore]
     [TestCase(15, Result = "PlingPlang")]
     [TestCase(21, Result = "PlingPlong")]
     [TestCase(35, Result = "PlangPlong")]
