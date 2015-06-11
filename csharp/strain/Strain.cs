@@ -5,7 +5,7 @@ namespace Exercism.Strain
 {
     public static class Strain
     {
-        public static IEnumerable<T> Keep<T>(this IEnumerable<T> source, Func<T, bool> keep)
+        public static IEnumerable<T> Keep<T>(this IEnumerable<T> source, Predicate<T> keep)
         {
             foreach (var item in source)
             {
@@ -16,7 +16,7 @@ namespace Exercism.Strain
             }
         }
 
-        public static IEnumerable<T> Discard<T>(this IEnumerable<T> source, Func<T, bool> discard)
+        public static IEnumerable<T> Discard<T>(this IEnumerable<T> source, Predicate<T> discard)
         {
             foreach (var item in source)
             {
