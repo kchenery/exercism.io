@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accumulate\Accumulate.cs" />
+    <Compile Include="accumulate\AccumulateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="accumulate\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
