@@ -38,13 +38,7 @@ namespace Exercism.atbash_cipher
         {
             letter = Char.ToLower(letter);
 
-            if (Char.IsLetter(letter))
-            {
-                int ascii = (int)letter - 97;
-                letter = (char)(25 - ascii + 97);
-            }
-
-            return letter;
+            return Char.IsLetter(letter) ? (char)('z' - letter + 'a') : letter;
         }
     }
 }
