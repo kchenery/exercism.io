@@ -8,25 +8,30 @@ namespace Exercism.Trinary
 {
     public static class Trinary
     {
-        private static char[] VALID_TRINARY = { '0', '1', '2' };
+        private static char[] VALID_TRINARY_LIST = { '0', '1', '2' };
 
         public static int ToDecimal(string trinary)
         {
-            int value = 0;
-            int factor = (int)Math.Pow(3, trinary.Length - 1);
+            int total = 0;
+            int factor = 1;
+            int position = trinary.Length - 1;
 
-            foreach(var tri in trinary)
+            do
             {
-                if (!(VALID_TRINARY.Contains(tri)))
+                var tri = trinary[position];
+
+                if (!(VALID_TRINARY_LIST.Contains(tri)))
                 {
                     return 0;
                 }
 
-                value += ((int)Char.GetNumericValue(tri) * factor);
-                factor /= 3;
-            }
+                total += ((int)Char.GetNumericValue(tri) * factor);
 
-            return value;
+                factor *= 3;
+                position--;
+            } while (position >= 0);
+
+            return total;
         }
     }
 }
