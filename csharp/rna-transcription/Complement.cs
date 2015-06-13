@@ -14,21 +14,19 @@ namespace Exercism.RNATranscription
             { 'T', 'A' }, 
             { 'A', 'U' } 
         };
-        private static Dictionary<char, char> RnaToDna = new Dictionary<char,char>(){ 
-            { 'C', 'G' }, 
-            { 'G', 'C' }, 
-            { 'A', 'T' }, 
-            { 'U', 'A' } 
-        };
+        private static Dictionary<char, char> RnaToDna
+        {
+            get { return DnaToRna.ToDictionary(kvp => kvp.Value, kvp => kvp.Key); }
+        }
 
         public static string OfDna(string Dna)
         {
-            return new string(Dna.ToCharArray().Select(x => DnaToRna[x]).ToArray());
+            return String.Concat(Dna.Select(x => DnaToRna[x]));
         }
 
         public static string OfRna(string Rna)
         {
-            return new string(Rna.ToCharArray().Select(x => RnaToDna[x]).ToArray());
+            return String.Concat(Rna.Select(x => RnaToDna[x]));
         }
     }
 }
