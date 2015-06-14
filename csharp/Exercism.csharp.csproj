@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="octal\Octal.cs" />
+    <Compile Include="octal\OctalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="octal\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
