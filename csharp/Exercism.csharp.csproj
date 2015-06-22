@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="linked-list\LinkedListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="linked-list\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
