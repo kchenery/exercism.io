@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clock\Clock.cs" />
+    <Compile Include="clock\ClockTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="clock\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
