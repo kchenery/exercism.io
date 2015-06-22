@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="difference-of-squares\DifferenceOfSquares.cs" />
+    <Compile Include="difference-of-squares\DifferenceOfSquaresTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="difference-of-squares\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
