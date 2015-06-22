@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Exercism.LinkedList;
 
 [TestFixture]
 public class DequeTest
@@ -20,7 +21,6 @@ public class DequeTest
         Assert.That(deque.Pop(), Is.EqualTo(10));
     }
 
-    [Ignore]
     [Test]
     public void Push_and_shift_are_first_in_first_out_order()
     {
@@ -30,7 +30,6 @@ public class DequeTest
         Assert.That(deque.Shift(), Is.EqualTo(20));
     }
 
-    [Ignore]
     [Test]
     public void Unshift_and_shift_are_last_in_first_out_order()
     {
@@ -40,7 +39,6 @@ public class DequeTest
         Assert.That(deque.Shift(), Is.EqualTo(10));
     }
 
-    [Ignore]
     [Test]
     public void Unshift_and_pop_are_last_in_last_out_order()
     {
@@ -50,7 +48,6 @@ public class DequeTest
         Assert.That(deque.Pop(), Is.EqualTo(20));
     }
 
-    [Ignore]
     [Test]
     public void Push_and_pop_can_handle_multiple_values()
     {
@@ -62,7 +59,6 @@ public class DequeTest
         Assert.That(deque.Pop(), Is.EqualTo(10));
     }
 
-    [Ignore]
     [Test]
     public void Unshift_and_shift_can_handle_multiple_values()
     {
@@ -74,7 +70,6 @@ public class DequeTest
         Assert.That(deque.Shift(), Is.EqualTo(10));
     }
 
-    [Ignore]
     [Test]
     public void All_methods_of_manipulating_the_deque_can_be_used_together()
     {
