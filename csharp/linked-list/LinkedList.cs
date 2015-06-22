@@ -3,39 +3,38 @@ using System.Linq;
 
 namespace Exercism.LinkedList
 {
-    public class Deque<T>
+    public class Deque<T> : LinkedList<T>
     {
-        private LinkedList<T> theList;
-
-        public Deque()
+        
+    }
+    
+    public static class LinkedListExtensions
+    {
+        public static void Push<T>(this LinkedList<T> list, T item)
         {
-            theList = new LinkedList<T>();
+            list.AddLast(item);
         }
 
-        public void Push(T item)
+        public static T Shift<T>(this LinkedList<T> list)
         {
-            theList.AddLast(item);
-        }
-
-        public T Pop()
-        {
-            var item = theList.Last<T>();
-            theList.RemoveLast();
+            T item = list.First<T>();
+            list.RemoveFirst();
 
             return item;
         }
 
-        public void Unshift(T item)
+        public static T Pop<T>(this LinkedList<T> list)
         {
-            theList.AddFirst(item);
-        }
-
-        public T Shift()
-        {
-            var item = theList.First<T>();
-            theList.RemoveFirst();
+            T item = list.Last<T>();
+            list.RemoveLast();
 
             return item;
+        }
+
+        public static void Unshift<T>(this LinkedList<T> list, T item)
+        {
+            list.AddFirst(item);
+            
         }
     }
 }
