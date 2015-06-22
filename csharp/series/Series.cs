@@ -12,39 +12,24 @@ namespace Exercism.Series
 
         public Series(string series)
         {
+            if(series.Select(c => c).Where(c => !char.IsDigit(c)).Any())
+            {
+                throw new ArgumentException("Series contains non numeric values");
+            }
+
             _series = series;
         }
 
-        public int[][] Slices(int size)
+        public IEnumerable<IEnumerable<int>> Slices(int size)
         {
             if (size > _series.Length)
             {
                 throw new ArgumentException("Slice size is larger than the length of the Series");
             }
 
-            List<int[]> slices = new List<int[]>();
-
-            for (int i = 0; i < _series.Length - size + 1; i++)
-            {
-                List<int> slice = new List<int>();
-
-                for(int j = i; j < i + size; j++)
-                {
-                    int value;
-                 
-                    if (int.TryParse(_series[j].ToString(), out value))
-                    {
-                        slice.Add(value);
-                    }
-                    else{
-                        throw new Exception("Invalid character found");
-                    }
-                }
-
-                slices.Add(slice.ToArray());
-            }
-
-            return slices.ToArray<int[]>();
+            return Enumerable.Range(0, _series.Length - size + 1)
+                .Select(i => _series.Substring(i, size).Select(c => int.Parse(c.ToString())));
+            
         }
     }
 }
