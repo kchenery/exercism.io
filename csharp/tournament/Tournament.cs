@@ -5,19 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercism.tournament
+namespace Exercism.Tournament
 {
     public class Tournament
     {
-        private List<Team> _table = new List<Team>();
+        private List<Team> tournamentTable = new List<Team>();
 
         private string GetTable()
         {
-            _table.Sort();
+            tournamentTable.Sort();
 
             string table = TeamResultLine.FormatResultLine("Team", "MP", "W", "D", "L", "P");
                 
-            return String.Concat(table, String.Concat(_table.Select(x => x.ToString())));
+            return String.Concat(table, String.Concat(tournamentTable));
         }
 
         private void ParseResultLine(string rawResult)
@@ -37,18 +37,18 @@ namespace Exercism.tournament
 
         private void AddResult(string home, string away, string result)
         {
-            var homeTeam = _table.Where(x => x.Name == home).FirstOrDefault();
+            var homeTeam = tournamentTable.Where(x => x.Name == home).FirstOrDefault();
             if (homeTeam == null)
             {
                 homeTeam = new Team(home);
-                _table.Add(homeTeam);
+                tournamentTable.Add(homeTeam);
             }
 
-            var awayTeam = _table.Where(x => x.Name == away).FirstOrDefault();
+            var awayTeam = tournamentTable.Where(x => x.Name == away).FirstOrDefault();
             if (awayTeam == null)
             {
                 awayTeam = new Team(away);
-                _table.Add(awayTeam);
+                tournamentTable.Add(awayTeam);
             }
 
             switch(result)

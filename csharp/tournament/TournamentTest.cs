@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 using NUnit.Framework;
-using Exercism.tournament;
+using Exercism.Tournament;
 
 [TestFixture]
 public class TournamentTest
