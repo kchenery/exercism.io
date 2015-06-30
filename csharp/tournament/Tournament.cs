@@ -153,19 +153,9 @@ namespace Exercism.Tournament
 
     public static class TeamResultLine
     {
-        private static readonly int TeamNameLength = 31;
-        private static readonly int PointsLength = 3;
-
         public static string FormatResultLine(string name, string played, string wins, string draws, string losses, string points)
         {
-            return String.Format("{0}|{1} |{2} |{3} |{4} |{5}\r\n",
-                name.Trim().PadRight(TeamNameLength),
-                played.Trim().PadLeft(PointsLength),
-                wins.Trim().PadLeft(PointsLength),
-                draws.Trim().PadLeft(PointsLength),
-                losses.Trim().PadLeft(PointsLength),
-                points.Trim().PadLeft(PointsLength)
-                );
+            return String.Format("{0, -31}|{1,3} |{2,3} |{3,3} |{4,3} |{5,3}\r\n", name, played, wins, draws, losses, points);
         }
 
         public static string FormatResultLine(Team team)
