@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acronym\Acronym.cs" />
+    <Compile Include="acronym\AcronymTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="acronym\README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
