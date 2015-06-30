@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercism.Tournament
 {
@@ -16,7 +14,7 @@ namespace Exercism.Tournament
             tournamentTable.Sort();
 
             string table = TeamResultLine.FormatResultLine("Team", "MP", "W", "D", "L", "P");
-                
+
             return String.Concat(table, String.Concat(tournamentTable));
         }
 
@@ -51,20 +49,23 @@ namespace Exercism.Tournament
                 tournamentTable.Add(awayTeam);
             }
 
-            switch(result)
+            switch (result)
             {
                 case "win":
                     homeTeam.Wins++;
                     awayTeam.Losses++;
                     break;
+
                 case "loss":
                     homeTeam.Losses++;
                     awayTeam.Wins++;
                     break;
+
                 case "draw":
                     homeTeam.Draws++;
                     awayTeam.Draws++;
                     break;
+
                 default: break;
             }
         }
@@ -74,7 +75,7 @@ namespace Exercism.Tournament
             var tournament = new Tournament();
             using (var reader = new StreamReader(source))
             {
-                while(reader.Peek() > 0)
+                while (reader.Peek() > 0)
                 {
                     tournament.ParseResultLine(reader.ReadLine());
                 }
@@ -94,9 +95,13 @@ namespace Exercism.Tournament
         private static readonly int PointsForLoss = 0;
 
         public string Name { get; set; }
+
         public int Wins { get; set; }
+
         public int Losses { get; set; }
+
         public int Draws { get; set; }
+
         public int MatchesPlayed
         {
             get
@@ -107,7 +112,8 @@ namespace Exercism.Tournament
 
         public int Points
         {
-            get {
+            get
+            {
                 return (Wins * PointsForWin) + (Losses * PointsForLoss) + (Draws * PointsForDraw);
             }
         }
@@ -135,7 +141,7 @@ namespace Exercism.Tournament
                     return String.Compare(this.Name, otherTeam.Name, true);
                 }
             }
-            
+
             return 1;
         }
 
